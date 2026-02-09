@@ -49,12 +49,12 @@ export default function WhatIsSection() {
                             {/* Devotion Stats */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="bg-gold-900/10 border border-gold-600/20 rounded-xl p-4 text-center shadow-sm hover-glow cursor-default transition-all">
-                                    <div className="text-2xl font-bold text-gold-500">Fiel</div>
-                                    <div className="text-sm text-gold-400 opacity-70">Protección</div>
+                                    <div className="text-2xl font-bold text-gold-500">Suprema</div>
+                                    <div className="text-sm text-gold-400 opacity-70">Manifiesta Tu Fe</div>
                                 </div>
                                 <div className="bg-gold-900/10 border border-gold-600/20 rounded-xl p-4 text-center shadow-sm hover-glow cursor-default transition-all">
-                                    <div className="text-2xl font-bold text-gold-500">Justa</div>
-                                    <div className="text-sm text-gold-400 opacity-70">Sin Juicio</div>
+                                    <div className="text-2xl font-bold text-gold-500">Soberana</div>
+                                    <div className="text-sm text-gold-400 opacity-70">Lealtad Sin Juicios</div>
                                 </div>
                             </div>
                         </div>

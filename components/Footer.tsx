@@ -5,7 +5,7 @@ import LegalLink from './LegalLink';
 
 export default function Footer() {
     return (
-        <footer className="bg-black text-white pt-10 pb-4 md:pt-16 md:pb-8 relative overflow-hidden">
+        <footer className="bg-black text-white pt-10 pb-8 md:pt-16 md:pb-8 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-600/30 to-transparent"></div>
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid md:grid-cols-4 gap-12 mb-8 md:mb-16">
