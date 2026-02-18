@@ -35,43 +35,68 @@ export async function POST(req: Request) {
         Mensaje: ${mensaje}
       `,
       html: `
-        <div style="font-family: 'Times New Roman', serif; padding: 0; color: #e5e7eb; max-width: 600px; margin: 0 auto; background-color: #000000; border: 1px solid #d4af37;">
-          <div style="background: linear-gradient(to bottom, #1a1a1a, #000000); padding: 30px 20px; text-align: center; border-bottom: 2px solid #d4af37;">
-            <h1 style="margin: 0; font-size: 28px; color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">La Santísima</h1>
-            <p style="margin: 10px 0 0 0; color: #9ca3af; font-style: italic;">Nueva Petición Recibida</p>
-          </div>
-          
-          <div style="padding: 30px;">
-            <div style="margin-bottom: 25px; border-left: 3px solid #d4af37; padding-left: 15px;">
-              <p style="font-size: 14px; color: #d4af37; margin: 0 0 5px 0; text-transform: uppercase;">Devoto</p>
-              <p style="font-size: 18px; color: #ffffff; margin: 0;">${nombre}</p>
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Nueva Petición</title>
+        </head>
+        <body style="margin: 0; padding: 0; background-color: #000000; font-family: 'Times New Roman', Times, serif;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: #000000; color: #ffffff;">
+            
+            <!-- Header -->
+            <div style="text-align: center; padding: 40px 20px 20px 20px; border-bottom: 1px solid #d4af37;">
+              <h1 style="margin: 0; color: #d4af37; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">LA SANTÍSIMA</h1>
+              <p style="margin: 10px 0 0 0; color: #a1a1aa; font-style: italic; font-size: 14px;">Nueva Petición Recibida</p>
             </div>
 
-            <div style="margin-bottom: 25px; border-left: 3px solid #d4af37; padding-left: 15px;">
-              <p style="font-size: 14px; color: #d4af37; margin: 0 0 5px 0; text-transform: uppercase;">Motivo de la Petición</p>
-              <p style="font-size: 18px; color: #ffffff; margin: 0;">${motivo}</p>
-            </div>
+            <!-- Content -->
+            <div style="padding: 40px 30px;">
+              
+              <!-- Devoto Section -->
+              <div style="margin-bottom: 30px; border-left: 2px solid #d4af37; padding-left: 20px;">
+                <p style="margin: 0 0 8px 0; color: #d4af37; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif;">DEVOTO</p>
+                <p style="margin: 0; font-size: 20px; color: #ffffff;">${nombre}</p>
+              </div>
 
-            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-              <div style="flex: 1; min-width: 200px; margin-bottom: 25px; border-left: 3px solid #d4af37; padding-left: 15px;">
-                <p style="font-size: 14px; color: #d4af37; margin: 0 0 5px 0; text-transform: uppercase;">Contacto</p>
-                <div style="color: #cccccc; font-size: 18px;">
-                  <p style="margin: 5px 0;">📧 <a href="mailto:${correo}" style="color: #cccccc; text-decoration: none;">${correo}</a></p>
-                  <p style="margin: 5px 0;">📱 ${telefono}</p>
+              <!-- Motivo Section -->
+              <div style="margin-bottom: 30px; border-left: 2px solid #d4af37; padding-left: 20px;">
+                <p style="margin: 0 0 8px 0; color: #d4af37; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif;">MOTIVO DE LA PETICIÓN</p>
+                <p style="margin: 0; font-size: 20px; color: #ffffff;">${motivo}</p>
+              </div>
+
+              <!-- Contacto Section -->
+              <div style="margin-bottom: 40px; border-left: 2px solid #d4af37; padding-left: 20px;">
+                <p style="margin: 0 0 8px 0; color: #d4af37; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif;">CONTACTO</p>
+                <div style="margin-top: 5px;">
+                  <p style="margin: 5px 0; font-size: 16px; color: #e5e7eb; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 18px;">📧</span> 
+                    <a href="mailto:${correo}" style="color: #e5e7eb; text-decoration: none;">${correo}</a>
+                  </p>
+                  <p style="margin: 5px 0; font-size: 16px; color: #e5e7eb; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 18px;">📱</span> 
+                    <span>${telefono}</span>
+                  </p>
                 </div>
               </div>
+
+              <!-- Mensaje Sagrado Box -->
+              <div style="background-color: #0a0a0a; border: 1px solid #27272a; padding: 25px; border-radius: 4px;">
+                <p style="margin: 0 0 15px 0; color: #d4af37; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif; border-bottom: 1px solid #27272a; padding-bottom: 10px;">MENSAJE SAGRADO</p>
+                <div style="color: #e5e7eb; font-size: 16px; line-height: 1.6; white-space: pre-wrap;">${mensaje}</div>
+              </div>
+
             </div>
 
-            <div style="margin-top: 30px; background-color: #111111; padding: 20px; border: 1px solid #333333; border-radius: 4px;">
-              <p style="font-size: 14px; color: #d4af37; margin: 0 0 15px 0; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px;">Mensaje Sagrado</p>
-              <div style="color: #e5e7eb; font-size: 18px; line-height: 1.6; white-space: pre-wrap;">${mensaje}</div>
+            <!-- Footer -->
+            <div style="text-align: center; padding: 20px; color: #52525b; font-size: 12px; border-top: 1px solid #27272a;">
+              <p style="margin: 0;">Este mensaje fue enviado desde el altar digital de La Santisima.</p>
             </div>
-          </div>
 
-          <div style="background-color: #0a0a0a; padding: 20px; text-align: center; font-size: 12px; color: #666666; border-top: 1px solid #333333;">
-            <p style="margin: 0;">Este mensaje fue enviado desde el altar digital de La Santísima.</p>
           </div>
-        </div>
+        </body>
+        </html>
       `,
     };
 

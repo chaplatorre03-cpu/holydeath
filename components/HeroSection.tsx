@@ -75,7 +75,7 @@ export default function HeroSection() {
                             {/* Mystical Silhouette/Icon Representation */}
                             <div className="absolute inset-0 bg-gradient-to-t from-gold-600/20 to-transparent rounded-full filter blur-3xl animate-pulse-glow"></div>
 
-                            <div className="relative z-10 w-full h-full flex items-center justify-center transform -translate-y-6 lg:translate-y-0">
+                            <div className="relative z-10 w-full h-full flex items-center justify-center transform translate-y-2 lg:translate-y-0">
                                 {/* Detailed Icon of Santa Muerte */}
                                 <div className="w-full h-full animate-float-slow drop-shadow-[0_0_30px_rgba(212,175,55,0.5)] scale-110">
                                     <img

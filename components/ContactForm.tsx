@@ -145,12 +145,12 @@ export default function ContactForm() {
                         disabled={isSubmitting}
                     >
                         <option value="" disabled className="bg-black text-white">¿Qué favor necesitas?</option>
-                        <option value="Amarres de Amor (Túnica Roja)" className="bg-black text-white">Amarres de Amor (Túnica Roja)</option>
-                        <option value="Prosperidad y Dinero (Túnica Dorada)" className="bg-black text-white">Prosperidad y Dinero (Túnica Dorada)</option>
-                        <option value="Protección Total (Túnica Negra)" className="bg-black text-white">Protección Total (Túnica Negra)</option>
-                        <option value="Salud y Limpia (Túnica Blanca)" className="bg-black text-white">Salud y Limpia (Túnica Blanca)</option>
-                        <option value="Justicia Legal (Túnica Verde)" className="bg-black text-white">Justicia Legal (Túnica Verde)</option>
-                        <option value="Otro Motivo" className="bg-black text-white">Otro Motivo</option>
+                        <option value="amor" className="bg-black text-white">Amarres de Amor (Túnica Roja)</option>
+                        <option value="dinero" className="bg-black text-white">Prosperidad y Dinero (Túnica Dorada)</option>
+                        <option value="proteccion" className="bg-black text-white">Protección Total (Túnica Negra)</option>
+                        <option value="salud" className="bg-black text-white">Salud y Limpia (Túnica Blanca)</option>
+                        <option value="justicia" className="bg-black text-white">Justicia Legal (Túnica Verde)</option>
+                        <option value="otra" className="bg-black text-white">Otro Motivo</option>
                     </select>
                 </div>
 
