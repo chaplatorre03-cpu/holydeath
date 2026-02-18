@@ -19,7 +19,7 @@ export default function WhatIsSection() {
     };
 
     return (
-        <section id="que-es" className="pt-6 pb-20 bg-black overflow-hidden relative">
+        <section id="que-es" className="pt-6 pb-10 bg-black overflow-hidden relative">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title */}
@@ -33,15 +33,15 @@ export default function WhatIsSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Illustration */}
                     <AnimatedSection animation="fade-right" className="flex justify-center relative">
-                        <div className="bg-black border border-gold-900/50 rounded-3xl p-10 max-w-sm w-full hover-lift shadow-[0_0_50px_rgba(212,175,55,0.05)]">
+                        <div className="bg-black border border-gold-900/50 rounded-3xl p-6 md:p-10 max-w-lg w-full hover-lift shadow-[0_0_50px_rgba(212,175,55,0.05)]">
                             {/* Symbolic Altar Representation */}
-                            <div className="relative h-64 flex items-center justify-center mb-8">
-                                <div className="absolute w-48 h-48 bg-gold-600/5 rounded-full blur-3xl animate-pulse-glow"></div>
+                            <div className="relative h-auto md:h-[400px] flex items-center justify-center mb-0 md:mb-2">
+                                <div className="absolute w-80 h-80 bg-gold-600/5 rounded-full blur-3xl animate-pulse-glow"></div>
                                 <div className="z-10 w-full h-full flex items-center justify-center">
                                     <img
                                         src="/favicon.png"
                                         alt="La Santísima"
-                                        className="w-48 h-48 md:w-64 md:h-64 object-contain animate-float"
+                                        className="w-80 h-80 md:w-[350px] md:h-[350px] object-contain animate-float translate-y-4 md:translate-y-0"
                                     />
                                 </div>
                             </div>

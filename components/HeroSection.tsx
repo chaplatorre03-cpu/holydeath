@@ -16,7 +16,7 @@ export default function HeroSection() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:pl-8 lg:pr-16 py-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                     {/* Left Content */}
                     <div className="text-white relative z-10">
                         <AnimatedSection animation="fade-up" delay={0}>
@@ -45,7 +45,7 @@ export default function HeroSection() {
                             </div>
                         </AnimatedSection>
 
-                        <AnimatedSection animation="fade-up" delay={300} className="mb-12">
+                        <AnimatedSection animation="fade-up" delay={300} className="mb-8 lg:mb-12">
                             <a
                                 href="#contacto"
                                 onClick={(e) => {
@@ -58,9 +58,10 @@ export default function HeroSection() {
                                         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                                     }
                                 }}
-                                className="inline-flex items-center bg-gold-600 text-black px-10 py-4 rounded-full font-bold text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                                className="inline-flex items-center gap-2 bg-gold-600 text-black px-10 py-4 rounded-full font-bold text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)]"
                             >
-                                Consulta Espiritual Gratis
+                                <span>Consulta Espiritual</span>
+                                <span className="text-white">Gratis</span>
                                 <svg className="w-6 h-6 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
@@ -74,7 +75,7 @@ export default function HeroSection() {
                             {/* Mystical Silhouette/Icon Representation */}
                             <div className="absolute inset-0 bg-gradient-to-t from-gold-600/20 to-transparent rounded-full filter blur-3xl animate-pulse-glow"></div>
 
-                            <div className="relative z-10 w-full h-full flex items-center justify-center transform -translate-y-2 lg:translate-y-0">
+                            <div className="relative z-10 w-full h-full flex items-center justify-center transform translate-y-2 lg:translate-y-0">
                                 {/* Detailed Icon of Santa Muerte */}
                                 <div className="w-full h-full animate-float-slow drop-shadow-[0_0_30px_rgba(212,175,55,0.5)] scale-110">
                                     <img
@@ -99,7 +100,7 @@ export default function HeroSection() {
                                 <span className="text-xl">💰</span>
                             </div>
                             {/* Protection - Blue */}
-                            <div className="absolute top-0 left-1/4 w-16 h-16 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/30 flex items-center justify-center animate-float-delay-1 z-20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                            <div className="absolute top-16 left-1/4 w-16 h-16 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/30 flex items-center justify-center animate-float-delay-1 z-20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
                                 <span className="text-xl">🛡️</span>
                             </div>
                             {/* Health/Limpia - White */}

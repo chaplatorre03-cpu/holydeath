@@ -174,8 +174,8 @@ export default function ContactForm() {
                         type="checkbox"
                         id="privacy"
                         checked={accepted}
-                        readOnly
-                        className="mt-1 w-4 h-4 rounded border-gold-600/50 text-gold-600 focus:ring-gold-500 bg-black/80 cursor-not-allowed transition-transform"
+                        onChange={(e) => setAccepted(e.target.checked)}
+                        className="mt-1 w-4 h-4 rounded border-gold-600/50 text-gold-600 focus:ring-gold-500 bg-black/80 cursor-pointer transition-transform"
                         required
                     />
                     <label htmlFor="privacy" className="text-white/80 text-sm cursor-pointer hover:text-white transition-colors">

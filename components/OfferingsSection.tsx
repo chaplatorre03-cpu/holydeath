@@ -21,7 +21,7 @@ export default function OfferingsSection() {
         },
         {
             title: "Agua y Pan",
-            description: "Símbolos básicos de vida y sustento. Nunca deben faltar en un altar a la Niña Blanca.",
+            description: "Símbolos básicos de vida y sustento. Nunca deben faltar en un altar a La Santísima.",
             icon: "🍞"
         },
         {
@@ -49,7 +49,7 @@ export default function OfferingsSection() {
                     </h2>
                     <div className="w-32 h-1 bg-gold-600 mx-auto mt-6"></div>
                     <p className="text-white/80 mt-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                        El altar es el punto de encuentro con La Santísima. Las ofrendas son muestras de nuestra gratitud, respeto y fe hacia ella.
+                        El altar es el punto de encuentro con La Santa Muerte. Las ofrendas son muestras de nuestra gratitud, respeto y fe hacia ella.
                     </p>
                 </AnimatedSection>
 
@@ -79,7 +79,7 @@ export default function OfferingsSection() {
                     <div className="bg-gradient-to-r from-zinc-900 via-black to-zinc-900 p-8 md:p-12 rounded-[2.5rem] border border-gold-600/30">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">¿Quieres montar tu primer altar?</h3>
                         <p className="text-white/80 mb-10 max-w-2xl mx-auto text-lg">
-                            Te guiamos en el proceso de crear un espacio digno para La Santísima en tu hogar. Recibe orientación experta sobre la ubicación, elementos y oraciones necesarias.
+                            Te guiamos en el proceso de crear un espacio digno para La Santa Muerte en tu hogar. Recibe orientación experta sobre la ubicación, elementos y oraciones necesarias.
                         </p>
                         <a
                             href="#contacto"
@@ -93,9 +93,10 @@ export default function OfferingsSection() {
                                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                                 }
                             }}
-                            className="inline-flex items-center bg-gold-600 text-black px-10 py-4 rounded-full font-bold text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                            className="inline-flex flex-wrap justify-center items-center gap-2 bg-gold-600 text-black px-6 py-4 sm:px-10 rounded-full font-bold text-base sm:text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)] max-w-full"
                         >
-                            Consultar sobre Altares
+                            <span>Consultar sobre</span>
+                            <span className="text-white">Altares</span>
                             <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" />
                             </svg>
