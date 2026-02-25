@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function WhatsAppButton() {
-    const phoneNumber = '573222020818'; // Número actualizado según solicitud del usuario
+    const phoneNumber = '573214260853'; // Número actualizado según solicitud del usuario
     const message = 'Hola, me gustaría obtener más información sobre sus servicios.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
