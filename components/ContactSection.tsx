@@ -45,10 +45,14 @@ export default function ContactSection() {
                                     </div>
                                     <div className="group-hover:font-bold transition-all">
                                         <p className="font-semibold text-gold-500 text-lg transition-colors">Santuario Principal</p>
-                                        <div className="text-white block text-base mt-1 group-hover:text-gold-500 transition-colors">
-                                            <p>Carrera 3 # 25c - 15</p>
-                                            <p>Soacha, Cundinamarca</p>
-                                        </div>
+                                        <a
+                                            href="https://maps.app.goo.gl/Y5JNw2AUo5ikAbSXA"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white block text-base mt-1 group-hover:text-gold-500 transition-colors hover:underline"
+                                        >
+                                            Colombia, Huila
+                                        </a>
                                     </div>
                                 </div>
 
@@ -58,7 +62,7 @@ export default function ContactSection() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                     </div>
-                                    <a href="mailto:chaplatorre03@gmail.com" className="text-white hover:text-gold-400 hover:font-bold transition-all text-lg font-medium">
+                                    <a href="mailto:holydeath2006@gmail.com" className="text-white hover:text-gold-400 hover:font-bold transition-all text-lg font-medium">
                                         santísima@devocion.com
                                     </a>
                                 </div>
@@ -70,12 +74,12 @@ export default function ContactSection() {
                                         </svg>
                                     </div>
                                     <a
-                                        href="https://wa.me/573222020818?text=Hola%2C%20necesito%20una%20consulta%20espiritual%20con%20La%20Sant%C3%ADsima."
+                                        href="https://wa.me/573214260853?text=Hola%2C%20necesito%20una%20consulta%20espiritual%20con%20La%20Sant%C3%ADsima."
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-gold-400 font-bold text-xl hover:text-white transition-colors"
                                     >
-                                        +57 322 202 0818
+                                        +57 321 426 0853
                                     </a>
                                 </div>
                             </div>
