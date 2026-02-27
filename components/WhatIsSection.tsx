@@ -94,10 +94,10 @@ export default function WhatIsSection() {
                             <a
                                 href="#servicios"
                                 onClick={handleScrollToServices}
-                                className="inline-flex items-center bg-transparent border-2 border-gold-600 text-gold-500 px-8 py-3 rounded-full font-bold hover:bg-gold-600 hover:text-white transition-all group"
+                                className="inline-flex items-center justify-center whitespace-nowrap bg-transparent border-2 border-gold-600 text-gold-500 px-6 sm:px-8 py-3 rounded-full font-bold text-base sm:text-lg hover:bg-gold-600 hover:text-white transition-all group"
                             >
-                                Ver Rituales y Servicios
-                                <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span className="whitespace-nowrap">Ver Rituales y Servicios</span>
+                                <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </a>

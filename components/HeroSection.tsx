@@ -58,11 +58,11 @@ export default function HeroSection() {
                                         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                                     }
                                 }}
-                                className="inline-flex items-center gap-2 bg-gold-600 text-black px-10 py-4 rounded-full font-bold text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                                className="inline-flex items-center justify-center whitespace-nowrap gap-2 bg-gold-600 text-black px-6 sm:px-10 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all"
                             >
-                                <span>Consulta Espiritual</span>
-                                <span className="text-white">Gratis</span>
-                                <svg className="w-6 h-6 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span className="whitespace-nowrap">Consulta Espiritual</span>
+                                <span className="text-white whitespace-nowrap">Gratis</span>
+                                <svg className="w-6 h-6 ml-1 sm:ml-2 transition-transform group-hover:translate-x-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </a>

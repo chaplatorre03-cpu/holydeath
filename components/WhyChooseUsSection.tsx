@@ -27,7 +27,7 @@ export default function WhyChooseUsSection() {
     ];
 
     return (
-        <section id="devocion" className="pt-4 pb-10 md:pt-6 md:pb-16 bg-gradient-to-br from-black via-zinc-900 to-black relative overflow-hidden">
+        <section id="devocion" className="pt-4 pb-20 md:pt-6 md:pb-16 bg-gradient-to-br from-black via-zinc-900 to-black relative overflow-hidden">
             {/* Mystical background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-10 left-10 w-96 h-96 bg-gold-600/5 rounded-full blur-[100px] blob blob-1"></div>
@@ -76,11 +76,11 @@ export default function WhyChooseUsSection() {
                                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                             }
                         }}
-                        className="inline-flex items-center gap-2 bg-gold-600 text-black px-10 py-4 rounded-full font-bold text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                        className="inline-flex items-center justify-center whitespace-nowrap gap-2 bg-gold-600 text-black px-6 sm:px-10 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg btn-animated hover-glow shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all"
                     >
-                        <span>Inicia Tu Proceso</span>
-                        <span className="text-white">Hoy</span>
-                        <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span className="whitespace-nowrap">Inicia Tu Proceso</span>
+                        <span className="text-white whitespace-nowrap">Hoy</span>
+                        <svg className="w-6 h-6 ml-1 sm:ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.99 7.99 0 01-2.343 5.657z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.879 16.121A3 3 0 1012.015 11L11 14.015c0 1.105.895 2 2 2" />
                         </svg>
