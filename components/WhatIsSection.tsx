@@ -90,7 +90,7 @@ export default function WhatIsSection() {
                             </div>
                         </AnimatedSection>
 
-                        <AnimatedSection animation="fade-left" delay={300}>
+                        <AnimatedSection animation="fade-left" delay={300} className="flex justify-center lg:justify-start">
                             <a
                                 href="#servicios"
                                 onClick={handleScrollToServices}

@@ -45,7 +45,7 @@ export default function HeroSection() {
                             </div>
                         </AnimatedSection>
 
-                        <AnimatedSection animation="fade-up" delay={300} className="mb-8 lg:mb-12">
+                        <AnimatedSection animation="fade-up" delay={300} className="mb-8 lg:mb-12 flex justify-center lg:justify-start">
                             <a
                                 href="#contacto"
                                 onClick={(e) => {
