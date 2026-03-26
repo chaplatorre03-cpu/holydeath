@@ -80,6 +80,7 @@ export default function MediosDePagoPage() {
                                         width={256}
                                         height={256}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        priority
                                     />
                                 </div>
                                 <h3 className="text-2xl font-black text-gray-900 uppercase italic tracking-tighter">Medios de Pago</h3>
@@ -87,7 +88,7 @@ export default function MediosDePagoPage() {
                             </div>
                         </div>
 
-                        <div className="flex-1 p-8 space-y-3">
+                        <div className="p-8 space-y-3">
                             <button
                                 onClick={() => window.open('https://kiire.mpos.com/mailpos/#/jb-27LN', '_blank')}
                                 className="w-full p-5 bg-gray-50 rounded-2xl border border-gray-100 flex items-center space-x-4 hover:bg-white hover:shadow-xl transition-all group cursor-pointer text-left"
@@ -157,7 +158,7 @@ export default function MediosDePagoPage() {
                             </button>
                         </div>
 
-                        <div className="p-8 mt-auto">
+                        <div className="p-8">
                             <button
                                 onClick={() => router.push('/')}
                                 className="w-full bg-black text-white py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-xl transition-all hover:scale-[1.02] active:scale-95"
@@ -180,7 +181,7 @@ export default function MediosDePagoPage() {
                             </div>
                         </div>
 
-                        <div className="flex-1 p-8 space-y-6">
+                        <div className="p-8 space-y-6">
                             <div className="bg-gray-50 rounded-3xl border border-gray-100 p-6 space-y-4">
                                 <div>
                                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Enviar a número</p>
@@ -227,7 +228,7 @@ export default function MediosDePagoPage() {
                             </div>
                         </div>
 
-                        <div className="p-8 mt-auto flex flex-col gap-3">
+                        <div className="p-8 flex flex-col gap-3">
                             <a
                                 href={`https://wa.me/57${organizerPhone}?text=Hola,%20acabo%20de%20realizar%20un%20pago.%20Adjunto%20comprobante.`}
                                 target="_blank"
