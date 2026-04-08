@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     CreditCard, MousePointer2, Wallet, Send,
     CheckCircle, Copy, ArrowLeft, X, Phone
@@ -8,10 +8,26 @@ import {
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
+const PAYMENT_LINKS = [
+    { amount: "30.000", url: "https://kiire.mpos.com/mailpos/#/jb-27LN" },
+    { amount: "50.000", url: "https://kiire.mpos.com/mailpos/#/jb-P1X4" },
+    { amount: "120.000", url: "https://kiire.mpos.com/mailpos/#/jb-GFPM" },
+    { amount: "300.000", url: "https://kiire.mpos.com/mailpos/#/jb-ZNLQ" },
+    { amount: "400.000", url: "https://kiire.mpos.com/mailpos/#/jb-LPTL" },
+    { amount: "600.000", url: "https://kiire.mpos.com/mailpos/#/jb-PJ2Z" },
+    { amount: "800.000", url: "https://kiire.mpos.com/mailpos/#/jb-R66W" },
+    { amount: "1.100.000", url: "https://kiire.mpos.com/mailpos/#/jb-C6TI" },
+];
+
 export default function MediosDePagoPage() {
     const router = useRouter();
     const [paymentDetailView, setPaymentDetailView] = useState<string | null>(null);
     const [copiedField, setCopiedField] = useState<string | null>(null);
+
+    // Reset scroll to top whenever the view changes
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [paymentDetailView]);
 
     // Using the phone number from holydeath contact section
     const organizerPhone = '3222020818';
@@ -90,7 +106,7 @@ export default function MediosDePagoPage() {
 
                         <div className="p-8 space-y-3">
                             <button
-                                onClick={() => window.open('https://kiire.mpos.com/mailpos/#/jb-27LN', '_blank')}
+                                onClick={() => setPaymentDetailView('tarjeta')}
                                 className="w-full p-5 bg-gray-50 rounded-2xl border border-gray-100 flex items-center space-x-4 hover:bg-white hover:shadow-xl transition-all group cursor-pointer text-left"
                             >
                                 <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
@@ -103,7 +119,7 @@ export default function MediosDePagoPage() {
                             </button>
 
                             <button
-                                onClick={() => window.open('https://kiire.mpos.com/mailpos/#/jb-27LN', '_blank')}
+                                onClick={() => setPaymentDetailView('pse')}
                                 className="w-full p-5 bg-gray-50 rounded-2xl border border-gray-100 flex items-center space-x-4 hover:bg-white hover:shadow-xl transition-all group cursor-pointer text-left"
                             >
                                 <div className="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center group-hover:bg-pink-600 transition-colors">
@@ -173,71 +189,106 @@ export default function MediosDePagoPage() {
                         <div className="pt-20 px-8 pb-8 shrink-0 relative border-b border-gray-100">
                             <div className="text-center space-y-2">
                                 <h3 className="text-2xl font-black text-gray-900 uppercase italic tracking-tighter">
-                                    {paymentDetailView === 'nequi' ? 'Pago por Nequi' : paymentDetailView === 'daviplata' ? 'Pago por Daviplata' : 'Pago por Bre-B'}
+                                    {paymentDetailView === 'nequi' ? 'Pago por Nequi'
+                                        : paymentDetailView === 'daviplata' ? 'Pago por Daviplata'
+                                            : paymentDetailView === 'breb' ? 'Pago por Bre-B'
+                                                : paymentDetailView === 'pse' ? 'Pago por PSE'
+                                                    : 'Pago con Tarjeta'}
                                 </h3>
                                 <p className="text-sm text-gray-500 font-medium">
-                                    {(paymentDetailView === 'nequi' || paymentDetailView === 'daviplata') ? 'Copia los datos y abre la App' : 'Copia los datos'}
+                                    {(paymentDetailView === 'pse' || paymentDetailView === 'tarjeta')
+                                        ? 'Selecciona el valor a pagar'
+                                        : (paymentDetailView === 'nequi' || paymentDetailView === 'daviplata')
+                                            ? 'Copia los datos y abre la App'
+                                            : 'Copia los datos'}
                                 </p>
                             </div>
                         </div>
 
-                        <div className="p-8 space-y-6">
-                            <div className="bg-gray-50 rounded-3xl border border-gray-100 p-6 space-y-4">
-                                <div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Enviar a número</p>
-                                    <div className="flex items-center justify-between">
-                                        <p className="text-2xl font-black text-gray-900 font-mono tracking-wider">
-                                            {organizerPhone}
-                                        </p>
+                        {(paymentDetailView === 'pse' || paymentDetailView === 'tarjeta') ? (
+                            <div className="p-8 space-y-4">
+                                <div className="grid grid-cols-2 gap-3">
+                                    {PAYMENT_LINKS.map((item, idx) => (
                                         <button
-                                            onClick={() => copyToClipboard(organizerPhone, 'phone')}
-                                            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${copiedField === 'phone' ? 'bg-green-100 text-green-600' : 'bg-white shadow-sm text-gray-600 hover:bg-gray-100'}`}
+                                            key={idx}
+                                            onClick={() => window.open(item.url, '_blank')}
+                                            className="p-5 bg-gray-50 border border-gray-100 rounded-2xl flex flex-col items-center justify-center space-y-1 hover:bg-white hover:shadow-xl hover:border-[#ff6b00]/30 transition-all group cursor-pointer text-center"
                                         >
-                                            {copiedField === 'phone' ? (
-                                                <><CheckCircle className="w-4 h-4" /><span>Copiado</span></>
-                                            ) : (
-                                                <><Copy className="w-4 h-4" /><span>Copiar</span></>
-                                            )}
+                                            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Valor</span>
+                                            <span className="text-xl font-black text-gray-900 font-mono italic tracking-tighter">${item.amount}</span>
+                                            <div className="pt-1 flex items-center space-x-1 text-[#ff6b00] opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <span className="text-[8px] font-black uppercase tracking-tighter">Pagar Ahora</span>
+                                            </div>
                                         </button>
-                                    </div>
+                                    ))}
+                                </div>
+                                <div className="pt-4 px-4 text-center">
+                                    <p className="text-[10px] text-gray-400 font-medium leading-tight italic">
+                                        Elige el monto que corresponde a tu servicio. Serás redirigido a nuestra pasarela segura.
+                                    </p>
                                 </div>
                             </div>
+                        ) : (
+                            <div className="p-8 space-y-6">
+                                <div className="bg-gray-50 rounded-3xl border border-gray-100 p-6 space-y-4">
+                                    <div>
+                                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Enviar a número</p>
+                                        <div className="flex items-center justify-between">
+                                            <p className="text-2xl font-black text-gray-900 font-mono tracking-wider">
+                                                {organizerPhone}
+                                            </p>
+                                            <button
+                                                onClick={() => copyToClipboard(organizerPhone, 'phone')}
+                                                className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${copiedField === 'phone' ? 'bg-green-100 text-green-600' : 'bg-white shadow-sm text-gray-600 hover:bg-gray-100'}`}
+                                            >
+                                                {copiedField === 'phone' ? (
+                                                    <><CheckCircle className="w-4 h-4" /><span>Copiado</span></>
+                                                ) : (
+                                                    <><Copy className="w-4 h-4" /><span>Copiar</span></>
+                                                )}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            {paymentDetailView !== 'breb' && (
-                                <button
-                                    onClick={() => handleOpenApp(paymentDetailView as 'nequi' | 'daviplata')}
-                                    className={`w-full py-5 rounded-2xl text-white font-black text-sm uppercase tracking-widest flex items-center justify-center space-x-3 transition-all active:scale-95 shadow-xl ${paymentDetailView === 'nequi'
-                                        ? 'bg-gradient-to-r from-[#E6007E] to-[#D4145A] shadow-[#E6007E]/30'
-                                        : 'bg-gradient-to-r from-[#ED1C24] to-[#C41017] shadow-[#ED1C24]/30'
-                                        }`}
-                                >
-                                    {paymentDetailView === 'nequi' ? (
-                                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.5 19.5V5h3.2l5.4 9.8V5h2.8v14.5h-3.2L10.3 9.7v9.8H7.5z" fill="currentColor" />
-                                            <rect x="3.5" y="5" width="2.5" height="2.5" fill="currentColor" />
-                                        </svg>
-                                    ) : <Wallet className="w-5 h-5" />}
-                                    <span>Abrir {paymentDetailView === 'nequi' ? 'Nequi' : 'Daviplata'}</span>
-                                </button>
-                            )}
+                                {paymentDetailView !== 'breb' && (
+                                    <button
+                                        onClick={() => handleOpenApp(paymentDetailView as 'nequi' | 'daviplata')}
+                                        className={`w-full py-5 rounded-2xl text-white font-black text-sm uppercase tracking-widest flex items-center justify-center space-x-3 transition-all active:scale-95 shadow-xl ${paymentDetailView === 'nequi'
+                                            ? 'bg-gradient-to-r from-[#E6007E] to-[#D4145A] shadow-[#E6007E]/30'
+                                            : 'bg-gradient-to-r from-[#ED1C24] to-[#C41017] shadow-[#ED1C24]/30'
+                                            }`}
+                                    >
+                                        {paymentDetailView === 'nequi' ? (
+                                            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.5 19.5V5h3.2l5.4 9.8V5h2.8v14.5h-3.2L10.3 9.7v9.8H7.5z" fill="currentColor" />
+                                                <rect x="3.5" y="5" width="2.5" height="2.5" fill="currentColor" />
+                                            </svg>
+                                        ) : <Wallet className="w-5 h-5" />}
+                                        <span>Abrir {paymentDetailView === 'nequi' ? 'Nequi' : 'Daviplata'}</span>
+                                    </button>
+                                )}
 
-                            <div className="pt-4">
-                                <p className="text-xs text-gray-400 font-medium text-center px-4">
-                                    Una vez realizado el pago, envía tu comprobante a nuestro WhatsApp para procesar tu solicitud.
-                                </p>
+                                <div className="pt-4">
+                                    <p className="text-xs text-gray-400 font-medium text-center px-4">
+                                        Una vez realizado el pago, envía tu comprobante a nuestro WhatsApp para procesar tu solicitud.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         <div className="p-8 flex flex-col gap-3">
-                            <a
-                                href={`https://wa.me/57${organizerPhone}?text=Hola,%20acabo%20de%20realizar%20un%20pago.%20Adjunto%20comprobante.`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-green-500/20"
-                            >
-                                <Phone className="w-4 h-4" />
-                                <span>Enviar Comprobante</span>
-                            </a>
+                            {(paymentDetailView === 'nequi' || paymentDetailView === 'daviplata' || paymentDetailView === 'breb') && (
+                                <a
+                                    href={`https://wa.me/57${organizerPhone}?text=Hola,%20acabo%20de%20realizar%20un%20pago.%20Adjunto%20comprobante.`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-green-500/20"
+                                >
+                                    <Phone className="w-4 h-4" />
+                                    <span>Enviar Comprobante</span>
+                                </a>
+                            )}
                             <button
                                 onClick={() => setPaymentDetailView(null)}
                                 className="w-full py-4 rounded-2xl bg-gray-100 text-gray-900 font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all active:scale-95"
