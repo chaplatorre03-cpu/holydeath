@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import CustomScrollbar from "@/components/CustomScrollbar";
 
@@ -27,6 +28,19 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="antialiased">
+        {/* Google Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18021182005"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18021182005');
+          `}
+        </Script>
         {children}
         <CustomScrollbar />
       </body>
