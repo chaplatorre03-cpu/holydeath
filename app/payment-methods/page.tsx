@@ -283,6 +283,13 @@ export default function MediosDePagoPage() {
                                     href={`https://wa.me/57${organizerPhone}?text=Hola,%20acabo%20de%20realizar%20un%20pago.%20Adjunto%20comprobante.`}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    onClick={() => {
+                                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                                            (window as any).gtag('event', 'conversion', {
+                                                'send_to': 'AW-18175597350/t33KCIPbx7AcEKa25tpD'
+                                            });
+                                        }
+                                    }}
                                     className="w-full bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-green-500/20"
                                 >
                                     <Phone className="w-4 h-4" />

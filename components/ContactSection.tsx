@@ -77,6 +77,13 @@ export default function ContactSection() {
                                         href="https://wa.me/573214260853?text=Hola%2C%20necesito%20una%20consulta%20espiritual%20con%20La%20Sant%C3%ADsima."
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => {
+                                            if (typeof window !== 'undefined' && (window as any).gtag) {
+                                                (window as any).gtag('event', 'conversion', {
+                                                    'send_to': 'AW-18175597350/t33KCIPbx7AcEKa25tpD'
+                                                });
+                                            }
+                                        }}
                                         className="text-gold-400 font-bold text-xl hover:text-white transition-colors"
                                     >
                                         +57 321 426 0853

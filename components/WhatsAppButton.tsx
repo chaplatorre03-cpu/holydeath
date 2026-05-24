@@ -12,6 +12,13 @@ export default function WhatsAppButton() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'conversion', {
+                        'send_to': 'AW-18175597350/t33KCIPbx7AcEKa25tpD'
+                    });
+                }
+            }}
             className="fixed bottom-[86px] right-[18px] md:right-[90px] z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-[68px] h-[68px] sm:w-auto sm:h-auto sm:px-4 sm:py-3 gap-0 sm:gap-2 group"
             aria-label="Escríbenos por WhatsApp"
         >

@@ -33,6 +33,13 @@ export default function ContactForm() {
             });
 
             if (response.ok) {
+                // Registrar conversión en Google Ads
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'conversion', {
+                        'send_to': 'AW-18175597350/t33KCIPbx7AcEKa25tpD'
+                    });
+                }
+
                 setSubmitStatus('success');
                 setFormData({
                     nombre: '',
