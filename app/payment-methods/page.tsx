@@ -206,7 +206,12 @@ export default function MediosDePagoPage() {
                         </div>
 
                         {(paymentDetailView === 'pse' || paymentDetailView === 'tarjeta') ? (
-                            <div className="p-8 space-y-4">
+                            <div className="px-8 pt-4 pb-6 space-y-4">
+                                <div className="px-4 text-center">
+                                    <p className="text-[10px] text-gray-400 font-medium leading-tight italic">
+                                        Elige el monto que corresponde a tu servicio. Serás redirigido a nuestra pasarela segura.
+                                    </p>
+                                </div>
                                 <div className="grid grid-cols-2 gap-3">
                                     {PAYMENT_LINKS.map((item, idx) => (
                                         <button
@@ -222,11 +227,34 @@ export default function MediosDePagoPage() {
                                         </button>
                                     ))}
                                 </div>
-                                <div className="pt-4 px-4 text-center">
-                                    <p className="text-[10px] text-gray-400 font-medium leading-tight italic">
-                                        Elige el monto que corresponde a tu servicio. Serás redirigido a nuestra pasarela segura.
+                                <div className="text-center">
+                                    <p className="text-xs text-gray-400 font-medium px-4">
+                                        Una vez realizado el pago, envía tu comprobante a nuestro WhatsApp para procesar tu solicitud.
                                     </p>
                                 </div>
+                                <a
+                                    href={`https://wa.me/57${organizerPhone}?text=Hola,%20acabo%20de%20realizar%20un%20pago.%20Adjunto%20comprobante.`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => {
+                                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                                            (window as any).gtag('event', 'conversion', {
+                                                'send_to': 'AW-18175597350/t33KCIPbx7AcEKa25tpD'
+                                            });
+                                        }
+                                    }}
+                                    className="w-full bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-green-500/20"
+                                >
+                                    <Phone className="w-4 h-4" />
+                                    <span>Enviar Comprobante</span>
+                                </a>
+                                <button
+                                    onClick={() => setPaymentDetailView(null)}
+                                    className="w-full py-4 rounded-2xl bg-gray-100 text-gray-900 font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all active:scale-95"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                    <span>VOLVER</span>
+                                </button>
                             </div>
                         ) : (
                             <div className="p-8 space-y-6">
@@ -277,8 +305,8 @@ export default function MediosDePagoPage() {
                             </div>
                         )}
 
-                        <div className="p-8 flex flex-col gap-3">
-                            {(paymentDetailView === 'nequi' || paymentDetailView === 'daviplata' || paymentDetailView === 'breb') && (
+                        {(paymentDetailView === 'nequi' || paymentDetailView === 'daviplata' || paymentDetailView === 'breb') && (
+                            <div className="px-8 pb-6 flex flex-col gap-3">
                                 <a
                                     href={`https://wa.me/57${organizerPhone}?text=Hola,%20acabo%20de%20realizar%20un%20pago.%20Adjunto%20comprobante.`}
                                     target="_blank"
@@ -295,15 +323,15 @@ export default function MediosDePagoPage() {
                                     <Phone className="w-4 h-4" />
                                     <span>Enviar Comprobante</span>
                                 </a>
-                            )}
-                            <button
-                                onClick={() => setPaymentDetailView(null)}
-                                className="w-full py-4 rounded-2xl bg-gray-100 text-gray-900 font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all active:scale-95"
-                            >
-                                <ArrowLeft className="w-4 h-4" />
-                                <span>VOLVER</span>
-                            </button>
-                        </div>
+                                <button
+                                    onClick={() => setPaymentDetailView(null)}
+                                    className="w-full py-4 rounded-2xl bg-gray-100 text-gray-900 font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-2 transition-all active:scale-95"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                    <span>VOLVER</span>
+                                </button>
+                            </div>
+                        )}
                     </>
                 )}
             </div>
